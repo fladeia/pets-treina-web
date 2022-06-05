@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Pets } from '../../@types/Pets'
+import { ApiSevice } from '../../services/apiServices'
+import { AxiosError } from 'axios'
 
 export const useIndex = () => {
+  // const [petList, setPetList] = useState<Pets[]>([]),
   const [petList, setPetList] = useState(
     [
       {
@@ -23,7 +26,50 @@ export const useIndex = () => {
     [amount, setAmount] = useState(''),
     [message, setMessage] = useState('')
 
-  const adotar = () => { }
+  // useEffect(() => {
+  //   ApiSevice.get('/pets')
+  //     .then((res) => {
+  //       setPetList(res.data)
+  //     })
+  // }, [])
+
+  // useEffect(() => {
+  //   if (selectedPet === null) {
+  //     cleanForm()
+  //   }
+  // }, [selectedPet])
+
+
+  const adotar = () => {
+    if (selectedPet !== null) {
+      if (inputValidation()) {
+        ApiSevice.post('/adocoes', {
+          pet_id: selectedPet.id,
+          email,
+          amount
+        })
+          .then(() => {
+            selectedPet(null)
+            setMessage('Pet adotado com sucesso')
+            // cleanForm()
+          })
+          .catch((error: AxiosError) => {
+            setMessage(error.res?.data.message)
+          })
+      } else {
+        setMessage('Preencha os campos corretamente')
+      }
+    }
+  }
+
+  const inputValidation = () => {
+    return email.length > 0 && amount.length > 0
+  }
+
+  const cleanForm = () => {
+    SetEmail('')
+    setAmount('')
+  }
 
   return {
     petList,
