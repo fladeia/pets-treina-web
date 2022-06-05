@@ -5,6 +5,7 @@ import { TextService } from '../../../data/services/TextService'
 
 interface ListProps {
   pets: Pets[];
+  onSelect: (pet: Pets) => void;
 }
 
 export const List = (props: ListProps) => {
@@ -25,6 +26,7 @@ export const List = (props: ListProps) => {
             <Button
               variant={'contained'}
               fullWidth
+              onClick={() => props.onSelect(pet)}
             >{pet.name}</Button>
           </C.Information>
         </C.ItemList>
