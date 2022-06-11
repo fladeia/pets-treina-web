@@ -8,17 +8,17 @@ const Form: NextPage = () => {
     cadastrar,
     petName,
     history,
-    photo,
+    urlPhoto,
     setPetName,
     setHistory,
-    setPhoto,
+    setUrlPhoto,
     message,
     setMessage
   } = useForm()
 
-  // console.log(`name: ${petName}`)
+  // console.log(`petName: ${petName}`)
   // console.log(`history: ${history}`)
-  // console.log(`photo: ${photo}`)
+  // console.log(`urlPhoto: ${urlPhoto}`)
   // console.log(`message: ${message}`)
 
   return (
@@ -50,15 +50,14 @@ const Form: NextPage = () => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              value={photo}
-              onChange={(e) => setPhoto(e.target.value)}
+              value={urlPhoto}
+              onChange={(e) => setUrlPhoto(e.target.value)}
               label={'Foto'}
               placeholder={'Digite o endereço da imagem'}
               fullWidth
             ></TextField>
             <Button
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              value={petName}
               variant={'contained'}
               color={'secondary'}
               sx={{ mt: 2 }}
@@ -81,12 +80,12 @@ const Form: NextPage = () => {
           </Grid>
         </Grid>
       </Paper >
-      {/* <Snackbar
+      <Snackbar
         open={message.length > 0}
         autoHideDuration={2500}
         onClose={() => setMessage('')}
         message={message}
-      ></Snackbar> */}
+      ></Snackbar>
     </>
   )
 }

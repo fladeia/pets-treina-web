@@ -24,7 +24,7 @@ const Relatorio: NextPage = () => {
           <TableBody>
             {listaRelatorio.map((relatorio) => (
               <TableRow key={relatorio.id}>
-                <TableCell>{relatorio.pet.name}</TableCell>
+                <TableCell>{relatorio.pet.petName}</TableCell>
                 <TableCell>{relatorio.email}</TableCell>
                 <TableCell align={'right'}>{relatorio.valor}</TableCell>
               </TableRow>

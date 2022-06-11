@@ -5,7 +5,7 @@ import axios, { AxiosError } from 'axios'
 export function useForm() {
   const [petName, setPetName] = useState('')
   const [history, setHistory] = useState('')
-  const [photo, setPhoto] = useState('')
+  const [urlPhoto, setUrlPhoto] = useState('')
   const [message, setMessage] = useState('')
 
   function cadastrar() {
@@ -13,7 +13,7 @@ export function useForm() {
       // axios.post('http://localhost:5000/api/pets', {
       //   petName,
       //   history,
-      //   photo
+      //   urlPhoto
       // })
       axios({
         method: 'post',
@@ -21,13 +21,13 @@ export function useForm() {
         data: {
           petName,
           history,
-          photo
+          urlPhoto
         }
       })
         .then((response) => {
           console.log(response)
           limpar()
-          setMessage('Pet cadastrado com sucesso')
+          setMessage(response.data)
         })
         .catch((error) => {
           // setMessage(error.response?.data.message)
@@ -39,23 +39,23 @@ export function useForm() {
   }
 
   function validarFormulario() {
-    return petName.length > 2 && history.length > 5 && photo.length > 5
+    return petName.length > 2 && history.length > 5 && urlPhoto.length > 5
   }
 
   function limpar() {
     setPetName('')
     setHistory('')
-    setPhoto('')
+    setUrlPhoto('')
   }
 
   return {
     cadastrar,
     petName,
     history,
-    photo,
+    urlPhoto,
     setPetName,
     setHistory,
-    setPhoto,
+    setUrlPhoto,
     message,
     setMessage
   }

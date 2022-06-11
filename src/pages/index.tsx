@@ -18,6 +18,8 @@ const Home: NextPage = () => {
     adotar
   } = useIndex()
 
+
+
   return (
     <>
       <Title
@@ -29,7 +31,7 @@ const Home: NextPage = () => {
         }
       ></Title>
       <List
-        pets={petList}
+        petList={petList}
         onSelect={(pet) => SetSelectedPet(pet)}
       ></List>
 

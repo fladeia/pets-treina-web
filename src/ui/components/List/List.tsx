@@ -1,10 +1,10 @@
 import { Button } from '@material-ui/core'
-import * as C from './List.style'
 import { Pets } from '../../../data/@types/Pets'
 import { TextService } from '../../../data/services/TextService'
+import * as C from './List.style'
 
 interface ListProps {
-  pets: Pets[];
+  petList: Pets[];
   onSelect: (pet: Pets) => void;
 }
 
@@ -13,12 +13,12 @@ export const List = (props: ListProps) => {
 
   return (
     <C.ListStyled>
-      {props.pets.map((pet, index) => (
-        <C.ItemList key={pet.id}>
-          <C.Photo src={pet.photo} alt='Foto do pet'></C.Photo>
+      {props.petList.map((pet, index) => (
+        <C.ItemList key={index}>
+          <C.Photo src={pet.urlPhoto} alt='Foto do pet'></C.Photo>
           <C.Information>
             <C.Name>
-              {pet.name}
+              {pet.petName}
             </C.Name>
             <C.Description>
               {TextService.textLimit(pet.history, maxlength)}
@@ -27,7 +27,7 @@ export const List = (props: ListProps) => {
               variant={'contained'}
               fullWidth
               onClick={() => props.onSelect(pet)}
-            >{pet.name}</Button>
+            >{pet.petName}</Button>
           </C.Information>
         </C.ItemList>
       ))}
