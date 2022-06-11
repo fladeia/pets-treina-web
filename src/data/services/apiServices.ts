@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export const ApiSevice = axios.create({
-  baseUrl: 'http://localhost:5000/api',
+export const ApiService = axios.create({
+  baseUrl: "http://localhost:5000/api",
   headers: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json"
   }
 })

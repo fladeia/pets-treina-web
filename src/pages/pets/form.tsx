@@ -5,6 +5,7 @@ import { Paper, Grid, Button, TextField, Snackbar } from '@mui/material'
 
 const Form: NextPage = () => {
   const {
+    cadastrar,
     petName,
     history,
     photo,
@@ -14,6 +15,12 @@ const Form: NextPage = () => {
     message,
     setMessage
   } = useForm()
+
+  // console.log(`name: ${petName}`)
+  // console.log(`history: ${history}`)
+  // console.log(`photo: ${photo}`)
+  // console.log(`message: ${message}`)
+
   return (
     <>
       <Title
@@ -64,6 +71,7 @@ const Form: NextPage = () => {
           </Grid>
           <Grid item xs={12} sx={{ textAlign: 'center' }}>
             <Button
+              onClick={cadastrar}
               variant={'contained'}
               fullWidth
               sx={{ maxWidth: { md: 200 }, mt: 4 }}
@@ -73,12 +81,12 @@ const Form: NextPage = () => {
           </Grid>
         </Grid>
       </Paper >
-      <Snackbar
+      {/* <Snackbar
         open={message.length > 0}
         autoHideDuration={2500}
         onClose={() => setMessage('')}
         message={message}
-      ></Snackbar>
+      ></Snackbar> */}
     </>
   )
 }
