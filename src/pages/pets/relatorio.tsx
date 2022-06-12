@@ -2,12 +2,9 @@ import { NextPage } from 'next';
 import { Title } from '../../ui/components/Title/Title';
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material'
 import { useRelatorio } from '../../data/hooks/Pages/pets/useRelatorio';
-import { useEffect } from 'react'
 
 const Relatorio: NextPage = () => {
   const { listaRelatorio } = useRelatorio()
-
-  console.log(listaRelatorio)
 
   return (
     <>
@@ -15,8 +12,8 @@ const Relatorio: NextPage = () => {
         title={'Relatório de adoçoes'}
         subtitle={'Veja a lista de pets adotados'}
       ></Title>
-      <Table>
-        <TableContainer component={Paper} sx={{ maxWidth: 830, mx: 'auto', p: { xs: 3, md: 5 } }}>
+      <TableContainer component={Paper} sx={{ maxWidth: 830, mx: 'auto', p: { xs: 3, md: 5 } }}>
+        <Table>
           <TableHead>
             <TableRow>
               <TableCell>Pet</TableCell>
@@ -33,11 +30,12 @@ const Relatorio: NextPage = () => {
               </TableRow>
             ))}
           </TableBody>
-        </TableContainer>
-
-      </Table>
+        </Table>
+      </TableContainer>
     </>
   )
 }
 
 export default Relatorio
+
+// FIX Error: Hydration failed because the initial UI does not match what was rendered on the server.
