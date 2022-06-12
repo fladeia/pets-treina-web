@@ -15,7 +15,7 @@ export const HeaderAdmin = () => {
           </Link>
           <Link
             component={NextLink}
-            href={'/pets/adoption'}
+            href={'/pets/relatorio'}
           >
             <a>
               Relatório {' '}

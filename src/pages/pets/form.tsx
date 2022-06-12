@@ -16,10 +16,7 @@ const Form: NextPage = () => {
     setMessage
   } = useForm()
 
-  // console.log(`petName: ${petName}`)
-  // console.log(`history: ${history}`)
-  // console.log(`urlPhoto: ${urlPhoto}`)
-  // console.log(`message: ${message}`)
+  console.log(message)
 
   return (
     <>
@@ -80,8 +77,9 @@ const Form: NextPage = () => {
           </Grid>
         </Grid>
       </Paper >
+      {/* FIX SNACKBAR MESSAGE  */}
       <Snackbar
-        open={message.length > 0}
+        open={message?.length > 0}
         autoHideDuration={2500}
         onClose={() => setMessage('')}
         message={message}

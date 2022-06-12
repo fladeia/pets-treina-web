@@ -27,18 +27,21 @@ export const useIndex = () => {
     }
   }, [selectedPet])
 
-
   const adotar = () => {
     if (selectedPet !== null) {
       if (inputValidation()) {
-        ApiSevice.post('/adocoes', {
-          pet_id: selectedPet.id,
-          email,
-          amount
+        axios({
+          method: 'post',
+          url: 'http://localhost:5000/api/adopt',
+          data: {
+            pet_id: selectedPet._id,
+            email,
+            amount
+          }
         })
-          .then(() => {
+          .then((response) => {
             selectedPet(null)
-            setMessage('Pet adotado com sucesso')
+            setMessage(response.data)
             // cleanForm()
           })
           .catch((error: AxiosError) => {

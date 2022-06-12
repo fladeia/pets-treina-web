@@ -13,8 +13,8 @@ export const List = (props: ListProps) => {
 
   return (
     <C.ListStyled>
-      {props.petList.map((pet, index) => (
-        <C.ItemList key={index}>
+      {props.petList.map((pet) => (
+        <C.ItemList key={pet._id}>
           <C.Photo src={pet.urlPhoto} alt='Foto do pet'></C.Photo>
           <C.Information>
             <C.Name>

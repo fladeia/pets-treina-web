@@ -25,7 +25,7 @@ export function useForm() {
         }
       })
         .then((response) => {
-          console.log(response)
+          // console.log(response)
           limpar()
           setMessage(response.data)
         })

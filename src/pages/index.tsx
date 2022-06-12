@@ -18,8 +18,6 @@ const Home: NextPage = () => {
     adotar
   } = useIndex()
 
-
-
   return (
     <>
       <Title
@@ -91,7 +89,7 @@ const Home: NextPage = () => {
         message={message}
         autoHideDuration={2500}
         onClose={() => setMessage('')}
-      />
+      ></Snackbar>
     </>
   )
 }

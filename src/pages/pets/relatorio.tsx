@@ -2,9 +2,12 @@ import { NextPage } from 'next';
 import { Title } from '../../ui/components/Title/Title';
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material'
 import { useRelatorio } from '../../data/hooks/Pages/pets/useRelatorio';
+import { useEffect } from 'react'
 
 const Relatorio: NextPage = () => {
   const { listaRelatorio } = useRelatorio()
+
+  console.log(listaRelatorio)
 
   return (
     <>
@@ -22,11 +25,11 @@ const Relatorio: NextPage = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {listaRelatorio.map((relatorio) => (
-              <TableRow key={relatorio.id}>
-                <TableCell>{relatorio.pet.petName}</TableCell>
+            {listaRelatorio?.map((relatorio) => (
+              <TableRow key={relatorio.pet_id}>
+                <TableCell>{relatorio.pet_id}</TableCell>
                 <TableCell>{relatorio.email}</TableCell>
-                <TableCell align={'right'}>{relatorio.valor}</TableCell>
+                <TableCell align={'right'}>{relatorio.amount}</TableCell>
               </TableRow>
             ))}
           </TableBody>
