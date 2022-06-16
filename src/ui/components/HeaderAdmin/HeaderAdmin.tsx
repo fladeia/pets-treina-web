@@ -6,7 +6,11 @@ export const HeaderAdmin = () => {
   return (
     <Container>
       <div>
-        <Logo src={'/images/logo.svg'} alt="Logo"></Logo>
+        <Link component={NextLink} href={'/'}>
+          <a>
+            <Logo src={'/images/logo.svg'} alt="Logo"></Logo>
+          </a>
+        </Link>
         <LinksContainer>
           <Link component={NextLink} href={'/pets/form'}>
             <a>
