@@ -85,12 +85,14 @@ const Home: NextPage = () => {
         </DialogActions>
       </Dialog>
       {/* FIX snackbar - undefined message (form page same feacture OK)*/}
-      {/* <Snackbar
+      <Snackbar
         open={message?.length > 0}
         message={message}
         autoHideDuration={2500}
         onClose={() => setMessage('')}
-      ></Snackbar> */}
+      >
+        {console.log(message)}
+      </Snackbar>
     </>
   )
 }

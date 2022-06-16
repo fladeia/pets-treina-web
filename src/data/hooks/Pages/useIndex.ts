@@ -35,14 +35,15 @@ export const useIndex = () => {
           url: 'http://localhost:5000/api/adopt',
           data: {
             pet_id: selectedPet._id,
+            pet_name: selectedPet.petName,
             email,
             amount
           }
         })
           .then((response) => {
-            selectedPet(null)
+            SetSelectedPet(null)
             setMessage(response.data)
-            // cleanForm()
+            cleanForm()
           })
           .catch((error: AxiosError) => {
             setMessage(error.res?.data.message)
