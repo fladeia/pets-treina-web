@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Relatorio } from '../../../@type/Relatorio'
-import { ApiSevice } from '../../../services/apiServices'
+// import { Relatorio } from '../../../@type/Relatorio'
+// import { ApiSevice } from '../../../services/apiServices'
 import axios from 'axios'
 
 export function useRelatorio() {

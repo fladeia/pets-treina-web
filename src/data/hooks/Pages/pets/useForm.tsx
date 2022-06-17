@@ -1,6 +1,6 @@
 import { useState } from 'react'
 // import { ApiService } from '../../../services/apiServices'
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 
 export function useForm() {
   const [petName, setPetName] = useState('')

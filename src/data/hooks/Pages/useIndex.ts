@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Pets } from '../../@types/Pets'
-import { ApiService } from '../../services/apiServices'
+// import { ApiService } from '../../services/apiServices'
 import axios, { AxiosError } from 'axios'
 
 export const useIndex = () => {
