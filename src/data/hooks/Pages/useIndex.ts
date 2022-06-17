@@ -11,7 +11,7 @@ export const useIndex = () => {
     [message, setMessage] = useState('')
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/pets')
+    axios.get('https://pets-backend-ladeia.herokuapp.com/api/pets')
       .then((res) => {
         setPetList(res.data.result)
       })
@@ -32,7 +32,7 @@ export const useIndex = () => {
       if (inputValidation()) {
         axios({
           method: 'post',
-          url: 'http://localhost:5000/api/adopt',
+          url: 'https://pets-backend-ladeia.herokuapp.com/api/adopt',
           data: {
             pet_id: selectedPet._id,
             pet_name: selectedPet.petName,

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const ApiService = axios.create({
-  baseUrl: "http://localhost:5000/api",
+  baseUrl: "https://pets-backend-ladeia.herokuapp.com/api",
   headers: {
     "Content-Type": "application/json"
   }

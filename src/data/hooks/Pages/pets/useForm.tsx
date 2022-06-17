@@ -10,14 +10,14 @@ export function useForm() {
 
   function cadastrar() {
     if (validarFormulario()) {
-      // axios.post('http://localhost:5000/api/pets', {
+      // axios.post('https://pets-backend-ladeia.herokuapp.com/api/pets', {
       //   petName,
       //   history,
       //   urlPhoto
       // })
       axios({
         method: 'post',
-        url: 'http://localhost:5000/api/pets',
+        url: 'https://pets-backend-ladeia.herokuapp.com/api/pets',
         data: {
           petName,
           history,

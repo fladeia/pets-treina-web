@@ -7,7 +7,7 @@ export function useRelatorio() {
   const [listaRelatorio, setListaRelatorio] = useState()
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/adopt')
+    axios.get('https://pets-backend-ladeia.herokuapp.com/api/adopt')
       .then((res) => {
         setListaRelatorio(res.data.result)
       })
