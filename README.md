@@ -18,7 +18,6 @@ Projeto Adote um pet desenvolvido durante o Multi stack - TreinaWeb. Backend des
 
 - [React Js](https://reactjs.org/)
 - [Next Js](https://nextjs.org/)
-- [axios](https://styled-components.com/)
 - [Axios](https://axios-http.com/)
 
 ---
