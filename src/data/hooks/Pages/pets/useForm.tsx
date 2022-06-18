@@ -1,5 +1,7 @@
+// @ts-nocheck
 import { useState } from 'react'
 // import { ApiService } from '../../../services/apiServices'
+
 import axios from 'axios'
 
 export function useForm() {
@@ -24,11 +26,13 @@ export function useForm() {
           urlPhoto
         }
       })
+
         .then((response) => {
           // console.log(response)
           limpar()
           setMessage(response.data)
         })
+
         .catch((error) => {
           // setMessage(error.response?.data.message)
           console.log(error)

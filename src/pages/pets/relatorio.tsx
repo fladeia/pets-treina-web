@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NextPage } from 'next';
 import { Title } from '../../ui/components/Title/Title';
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material'

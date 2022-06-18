@@ -1,6 +1,8 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react'
 import { Pets } from '../../@types/Pets'
 // import { ApiService } from '../../services/apiServices'
+
 import axios, { AxiosError } from 'axios'
 
 export const useIndex = () => {
@@ -12,9 +14,11 @@ export const useIndex = () => {
 
   useEffect(() => {
     axios.get('https://pets-backend-ladeia.herokuapp.com/api/pets')
+
       .then((res) => {
         setPetList(res.data.result)
       })
+
       .catch(function (error) {
         // handle error
         console.log(error);
@@ -40,6 +44,7 @@ export const useIndex = () => {
             amount
           }
         })
+
           .then((response) => {
             SetSelectedPet(null)
             setMessage(response.data)

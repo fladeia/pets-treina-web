@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Link, Box } from '@mui/material'
 import { NextLink } from 'next/link'
 import { Container, Logo, LinksContainer } from './HeaderAdminStyles'

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Button } from '@material-ui/core'
 import { Pets } from '../../../data/@types/Pets'
 import { TextService } from '../../../data/services/TextService'

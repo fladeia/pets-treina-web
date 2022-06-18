@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { styled } from '@mui/material'
 
 export const TitleStyled = styled('h1')`

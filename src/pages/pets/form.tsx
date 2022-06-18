@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NextPage } from 'next'
 import { useForm } from '../../data/hooks/Pages/pets/useForm'
 import { Title } from '../../ui/components/Title/Title'
