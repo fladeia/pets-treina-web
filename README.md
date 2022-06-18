@@ -28,6 +28,7 @@ Projeto Adote um pet desenvolvido durante o Multi stack - TreinaWeb. Backend des
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [w3schools](https://www.w3schools.com/)
 - [MDN](https://developer.mozilla.org/)
+- [Pixabay](https://pixabay.com/)
 
 ---
 
